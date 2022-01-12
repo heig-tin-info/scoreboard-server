@@ -1,0 +1,40 @@
+body {
+    background: url("./assets/stade-de-france.jpg")  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.scoreboard {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: 60%;
+    height: 60%;
+    background-color: #1f1e1e;
+
+    border: 10px solid #c2c8d3;
+    text-align: center;
+}
+
+.time {
+    padding: 10px;
+    //background-color: #c8722b;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #c2c8d3;
+    font-family: 'Tahoma';
+}
