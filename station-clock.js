@@ -94,13 +94,13 @@ function StationClock(clockId) {
   this.bodyShadowBlur    = 0.06;
   
   // body dial
-  this.dial              = StationClock.GermanStrokeDial;
+  this.dial              = StationClock.SwissStrokeDial;
   this.dialColor         = 'rgb(60,60,60)';
   
   // clock hands
-  this.hourHand          = StationClock.PointedHourHand;
-  this.minuteHand        = StationClock.PointedMinuteHand;
-  this.secondHand        = StationClock.HoleShapedSecondHand;
+  this.hourHand          = StationClock.SwissHourHand;
+  this.minuteHand        = StationClock.SwissMinuteHand;
+  this.secondHand        = StationClock.SwissSecondHand;
   this.handShadowColor   = 'rgba(0,0,0,0.3)';
   this.handShadowOffsetX = 0.03;
   this.handShadowOffsetY = 0.03;

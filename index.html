@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-     -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="segment-display.js"></script>
+    <script type="text/javascript" src="station-clock.js"></script>
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,21 +14,24 @@
 <body>
     <div class="scoreboard">
         <h1>Scoreboard</h1>
+        <div class="logo"></div>
         <div class="time">
             <canvas id="display" width="150" height="50"></canvas>
             <div class="row">
                 <div class="column">
-                    <canvas id="homeName" width="200" height="50"></canvas><br/>
+                    <canvas id="homeName" width="200" height="50"></canvas><br />
                     <canvas id="home" width="200" height="200"></canvas>
                 </div>
                 <div class="column"></div>
-                <canvas id="visitorName" width="200" height="50"></canvas><br/>
+                <canvas id="visitorName" width="200" height="50"></canvas><br />
                 <canvas id="visitor" width="200" height="200"></canvas>
-              </div>
-            
-        </div>        
+            </div>
+        </div>
     </div>
 
+    <div class="clock">
+        <canvas id="clock" width="150" height="150"></canvas>
+    </div>
     <script src="script.js"></script>
 </body>
 

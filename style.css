@@ -1,40 +1,54 @@
 body {
-    background: url("./assets/stade-de-france.jpg")  no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url("./assets/stade-de-france.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .scoreboard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  width: 60%;
+  height: 60%;
+  background-color: #1f1e1e;
+  border: 10px solid #c2c8d3;
+  text-align: center;
+}
+
+.clock {
     position: absolute;
-    left: 0;
-    right: 0;
+    right: 0px;
     top: 0;
-    bottom: 0;
-    margin: auto;
+}
 
-    width: 60%;
-    height: 60%;
-    background-color: #1f1e1e;
-
-    border: 10px solid #c2c8d3;
-    text-align: center;
+.logo {
+  background-image: url("./assets/heig-vd.svg");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .time {
-    padding: 10px;
-    //background-color: #c8722b;
+  padding: 10px;
 }
 
 .column {
-    float: left;
-    width: 50%;
-  }
-  
+  float: left;
+  width: 50%;
+}
+
 h1 {
-    text-align: center;
-    text-transform: uppercase;
-    color: #c2c8d3;
-    font-family: 'Tahoma';
+  text-align: center;
+  text-transform: uppercase;
+  color: #c2c8d3;
+  font-family: "Tahoma";
 }

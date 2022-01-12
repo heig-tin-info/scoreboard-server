@@ -169,7 +169,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       } else {
         var x = xPos;
         var y = 0;
-        context.fillStyle = this.getSegmentColor(c, '02356789acefp', '02356789abcdefgiopqrstz@');
+        if (typeof(c) == 'number') {
+          context.fillSize = c & 0x01 ? this.colorOn : this.colorOff;
+        } else {
+          context.fillStyle = this.getSegmentColor(c, '02356789acefp', '02356789abcdefgiopqrstz@');
+        }
         context.beginPath();
         switch (this.cornerType) {
           case SegmentDisplay.SymmetricCorner:
@@ -198,7 +202,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       // draw segment b
       x = xPos + this.digitWidth - this.segmentWidth;
       y = 0;
-      context.fillStyle = this.getSegmentColor(c, '01234789adhpy', '01234789abdhjmnopqruwy');
+      if (typeof(c) == 'number') {
+        context.fillSize = c & 0x02 ? this.colorOn : this.colorOff;
+      } else {
+        context.fillStyle = this.getSegmentColor(c, '01234789adhpy', '01234789abdhjmnopqruwy');
+      }      
       context.beginPath();
       switch (this.cornerType) {
         case SegmentDisplay.SymmetricCorner:
@@ -222,7 +230,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       // draw segment c
       x = xPos + this.digitWidth - this.segmentWidth;
       y = h + this.segmentWidth;
-      context.fillStyle = this.getSegmentColor(c, '013456789abdhnouy', '01346789abdghjmnoqsuw@', '%');
+      if (typeof(c) == 'number') {
+        context.fillSize = c & 0x04 ? this.colorOn : this.colorOff;
+      } else {
+        context.fillStyle = this.getSegmentColor(c, '013456789abdhnouy', '01346789abdghjmnoqsuw@', '%');
+      }      
       context.beginPath();
       context.moveTo(x, y + this.segmentWidth + d);
       context.lineTo(x + s, y + s + d);
@@ -247,7 +259,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       if (this.segmentCount == 16) {
         x = xPos;
         y = this.digitHeight - this.segmentWidth;
-        context.fillStyle = this.getSegmentColor(c, null, '0235689bcdegijloqsuz_=@');
+        if (typeof(c) == 'number') {
+          context.fillSize = c & 0x08 ? this.colorOn : this.colorOff;
+        } else {
+          context.fillStyle = this.getSegmentColor(c, null, '0235689bcdegijloqsuz_=@');
+        }        
         context.beginPath();
         context.moveTo(x + this.segmentWidth + d, y);
         context.lineTo(x + t - d - s, y);
@@ -271,6 +287,7 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
 
         x = xPos;
         y = this.digitHeight - this.segmentWidth;
+        
         context.fillStyle = this.getSegmentColor(c, null, '0235689bcdegijloqsuz_=@', '%');
         context.beginPath();
         context.moveTo(x + t + d + s, y + this.segmentWidth);
@@ -295,7 +312,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       else {
         x = xPos;
         y = this.digitHeight - this.segmentWidth;
-        context.fillStyle = this.getSegmentColor(c, '0235689bcdelotuy_', '0235689bcdegijloqsuz_=@');
+        if (typeof(c) == 'number') {
+          context.fillSize = c & 0x08 ? this.colorOn : this.colorOff;
+        } else {
+          context.fillStyle = this.getSegmentColor(c, '0235689bcdelotuy_', '0235689bcdegijloqsuz_=@');
+        }        
         context.beginPath();
         context.moveTo(x + this.segmentWidth + d, y);
         context.lineTo(x + this.digitWidth - this.segmentWidth - d, y);
@@ -325,7 +346,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       // draw segment e
       x = xPos;
       y = h + this.segmentWidth;
-      context.fillStyle = this.getSegmentColor(c, '0268abcdefhlnoprtu', '0268acefghjklmnopqruvw@');
+      if (typeof(c) == 'number') {
+        context.fillSize = c & 0x10 ? this.colorOn : this.colorOff;
+      } else {
+        context.fillStyle = this.getSegmentColor(c, '0268abcdefhlnoprtu', '0268acefghjklmnopqruvw@');
+      }      
       context.beginPath();
       context.moveTo(x, y + this.segmentWidth + d);
       context.lineTo(x + s, y + s + d);
@@ -349,7 +374,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       // draw segment f
       x = xPos;
       y = 0;
-      context.fillStyle = this.getSegmentColor(c, '045689abcefhlpty', '045689acefghklmnopqrsuvwy@', '%');
+      if (typeof(c) == 'number') {
+        context.fillSize = c & 0x20 ? this.colorOn : this.colorOff;
+      } else {
+        context.fillStyle = this.getSegmentColor(c, '045689abcefhlpty', '045689acefghklmnopqrsuvwy@', '%');
+      }      
       context.beginPath();
       context.moveTo(x + this.segmentWidth, y + this.segmentWidth + d);
       context.lineTo(x + this.segmentWidth, y + h + this.segmentWidth - d);
@@ -375,7 +404,11 @@ SegmentDisplay.prototype.drawDigit = function(context, xPos, mask, c) {
       if (this.segmentCount == 7) {
         x = xPos;
         y = (this.digitHeight - this.segmentWidth) / 2.0;
-        context.fillStyle = this.getSegmentColor(c, '2345689abdefhnoprty-=');
+        if (typeof(c) == 'number') {
+          context.fillSize = c & 0x40 ? this.colorOn : this.colorOff;
+        } else {
+          context.fillStyle = this.getSegmentColor(c, '2345689abdefhnoprty-=');
+        }        
         context.beginPath();
         context.moveTo(x + s + d, y + s);
         context.lineTo(x + this.segmentWidth + d, y);
@@ -540,6 +573,8 @@ SegmentDisplay.prototype.drawPoint = function(context, x1, y1, size) {
 }; 
 
 SegmentDisplay.prototype.getSegmentColor = function(c, charSet7, charSet14, charSet16) {
+
+
   if (c == '#') {
     return this.colorOn;
   } else {
@@ -552,7 +587,6 @@ SegmentDisplay.prototype.getSegmentColor = function(c, charSet7, charSet14, char
     }
   }
 };
-
 
 
 
