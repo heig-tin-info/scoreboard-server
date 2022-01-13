@@ -147,7 +147,7 @@ client.on('message', (topic, message) => {
             if (parseInt(message) === 255) reset_display()
             break
         case topic_base + '/' + SBOARD_REG_TEAM:
-            switch (state.team) {
+            switch (value) {
                 case SBOARD_HOME:
                     console.log("Selected Team Home")
                     state.text = homeName
@@ -164,7 +164,7 @@ client.on('message', (topic, message) => {
                     console.log("Error: Unknown team")
                     break;
             }
-            state.team = parseInt(message)
+            state.team = value
             break
         case topic_base + '/' + SBOARD_REG_DIGIT:
             if (parseInt(message) > 9) {
@@ -231,4 +231,11 @@ client.on('message', (topic, message) => {
             }
             break
     }
+
+    client.publish('/switzerland/geneva/scoreboard-status', 
+        '[' + home.value + '] [' + 
+        visitor.value + '] ' + 
+        timeDisplay.value + ' ' + 
+        homeName.value.padEnd(8, ' ') + ' ' + visitorName.value.padEnd(8, ' ')
+    );
 })
