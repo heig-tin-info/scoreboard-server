@@ -42,7 +42,7 @@ $(document).ready(function () {
     homeName.value = 'CHESEAUX';
     home.value = [0x3f, 0x3f];
 
-    visitorName.value = 'ST-ROCH';
+    visitorName.value = 'ST-ROCH ';
     visitor.value = [0x3f, 0x3f];
 
     home.draw();    
@@ -101,8 +101,8 @@ function reset_display() {
 
     timeDisplay.value = '00:00';
 
-    homeName.value = '';
-    visitorName.value = '';
+    homeName.value = '        ';
+    visitorName.value = '        ';
 
     home.draw();
     visitor.draw();
