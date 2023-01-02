@@ -45,12 +45,12 @@ $(document).ready(function () {
     visitorName.value = 'ST-ROCH ';
     visitor.value = [0x3f, 0x3f];
 
-    home.draw();    
+    home.draw();
     visitor.draw();
     homeName.draw();
-    visitorName.draw();    
+    visitorName.draw();
     timeDisplay.draw();
-    clock.draw()    
+    clock.draw()
 })
 
 window.setInterval(() => { clock.draw() }, 50)
@@ -73,7 +73,7 @@ const topic_base = '/switzerland/geneva/scoreboard'
 const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
 
 
-const client = mqtt.connect('ws://chevallier.io:9001', {
+const client = mqtt.connect('wss://mqtt.chevallier.io', {
     clean: true,
     connectTimeout: 4000,
     clientId: 'scoreboard-' + genRanHex(10),
@@ -101,7 +101,7 @@ function reset_display() {
 
     timeDisplay.value = '00:00';
 
-    homeName.value = '        ';
+    homeName.value    = '        ';
     visitorName.value = '        ';
 
     home.draw();
@@ -232,10 +232,10 @@ client.on('message', (topic, message) => {
             break
     }
 
-    client.publish('/switzerland/geneva/scoreboard-status', 
-        '[' + home.value + '] [' + 
-        visitor.value + '] ' + 
-        timeDisplay.value + ' ' + 
+    client.publish('/switzerland/geneva/scoreboard-status',
+        '[' + home.value + '] [' +
+        visitor.value + '] ' +
+        timeDisplay.value + ' ' +
         homeName.value.padEnd(8, ' ') + ' ' + visitorName.value.padEnd(8, ' ')
     );
 })
